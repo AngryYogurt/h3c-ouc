@@ -1,9 +1,9 @@
 BIN=h3c_ouc
 OBJS=h3c_ouc.o authenticate.o
-CFLAGS=-lpcap -lgcrypt
+CFLAGS=
 
 $(BIN): $(OBJS)
-	$(GCC) $(CFLAGS) $(OBJS) -o  $@
+	$(GCC) $(CFLAGS) $(OBJS) -lpcap -lgcrypt -o  $@
 
 %.o: %.c
 	$(GCC) $(CFLAGS) -c $<
